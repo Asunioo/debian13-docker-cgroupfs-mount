@@ -15,7 +15,7 @@ jobs:
       image: debian:trixie
       
     steps:
-      # 1. 检出当前仓库的代码（已升级至 v5）
+      # 1. 检出当前仓库的代码
       - name: Checkout repository
         uses: actions/checkout@v5
         
@@ -29,6 +29,7 @@ jobs:
             dpkg-dev \
             fakeroot \
             debhelper \
+            dh-make \
             git
             
       # 3. 获取上游源码并使用 dh_make 初始化打包结构
